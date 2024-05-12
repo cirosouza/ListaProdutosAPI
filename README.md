@@ -22,9 +22,9 @@ endpoint: https://localhost:8080/api/produtos/
 Método: GET  
 Funcionalidade: Retorna uma lista com todos os produtos armazenados no banco.  
 
-**create**
-endpoint: https://localhost:8080/api/produtos/
-Método: POST
+**create**  
+endpoint: https://localhost:8080/api/produtos/  
+Método: POST  
 Funcionalidade: Cria uma novo registro de produtos no banco de dados. Enviar no corpo da GET request um JSON semelhante ao informado anteriormente com as informações do produto a ser criado.  
 
 **update**  
