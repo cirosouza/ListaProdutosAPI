@@ -49,16 +49,24 @@ public class ProdutoController {
         if(produtoDatabase.isEmpty()){
             throw new ProdutoNotFoundExecption();
         }
-        produtoRepository.save(produto);
+
+        produtoDatabase.get().setNome(produto.getNome());
+        produtoDatabase.get().setPreco(produto.getPreco());
+        produtoDatabase.get().setPeso(produto.getPeso());
+
+        produtoRepository.save(produtoDatabase.get());
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     void delete(@PathVariable Integer id) throws ProdutoNotFoundExecption {
         Optional<Produto> produtoDatabase = produtoRepository.findById(id);
+
         if(produtoDatabase.isEmpty()){
             throw new ProdutoNotFoundExecption();
         }
+
+
         produtoRepository.delete(produtoRepository.findById(id).get());
     }
 }
